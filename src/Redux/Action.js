@@ -89,7 +89,7 @@ export const FunctionAddUser = (data) => {
       .post("https://mock-avor-api.onrender.com/product", data)
       .then((res) => {
         dispatch(addUser());
-        toast.success("User Added successfully.");
+        toast.success("Product Added successfully.");
       })
       .catch((err) => {
         dispatch(failRequest(err.message));
@@ -105,7 +105,7 @@ export const FunctionUpdateUser = (data, code) => {
       .put("https://mock-avor-api.onrender.com/product" + code, data)
       .then((res) => {
         dispatch(updateUser());
-        toast.success("User Updated successfully.");
+        toast.success("Product Updated successfully.");
       })
       .catch((err) => {
         dispatch(failRequest(err.message));
