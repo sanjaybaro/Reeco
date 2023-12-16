@@ -8,6 +8,8 @@ const Updateuser = () => {
   const [name, namechange] = useState("");
   const [brand, brandchange] = useState("");
   const [price, pricechange] = useState("");
+  const [image, imagechange] = useState("");
+  const [quantity, quantitychange] = useState("");
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -17,7 +19,7 @@ const Updateuser = () => {
 
   const handlesubmit = (e) => {
     e.preventDefault();
-    const userobj = { id, name, brand, price };
+    const userobj = { id, name, brand, price, image, quantity };
     dispatch(FunctionUpdateUser(userobj, id));
     navigate("/user");
   };
@@ -76,10 +78,30 @@ const Updateuser = () => {
               </div>
               <div className="col-lg-12">
                 <div className="form-group">
+                  <label>Image</label>
+                  <input
+                    value={image}
+                    onChange={(e) => imagechange(e.target.value)}
+                    className="form-control"
+                  ></input>
+                </div>
+              </div>
+              <div className="col-lg-12">
+                <div className="form-group">
                   <label>Price</label>
                   <input
                     value={price || ""}
                     onChange={(e) => pricechange(e.target.value)}
+                    className="form-control"
+                  ></input>
+                </div>
+              </div>
+              <div className="col-lg-12">
+                <div className="form-group">
+                  <label>Quantity</label>
+                  <input
+                    value={quantity}
+                    onChange={(e) => quantitychange(e.target.value)}
                     className="form-control"
                   ></input>
                 </div>
